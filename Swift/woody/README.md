@@ -196,10 +196,25 @@ default:
 ## 6. 함수
 
 ```swift
-func greet(person: String) -> String {
-    let greeting = "Hello, " + person + "!"
-    return greeting
+func greet(greeting: String, person: String) -> String {
+    let msg = "\(greeting), \(person)!"
+    return msg
 }
+
+print(greet(greeting: "Hello", person: "John")) // Hello, John!
+```
+
+함수 호출시 파라미터를 넘기기 위해 `greeting: "Hello"`처럼 파라미터 라벨을 명시해주었다.
+
+만약 파라미터 라벨 없이 그냥 순서대로 파라미터를 넘기고 싶다면, 언더스코어 `_`를 사용해 파라미터를 정의해야 한다.
+
+```swift
+func greet(_ greeting: String, _ person: String) -> String {
+    let msg = "\(greeting), \(person)!"
+    return msg
+}
+
+print(greet("Hello", "John")) // Hello, John!
 ```
 
 ## 7. Value와 Reference
