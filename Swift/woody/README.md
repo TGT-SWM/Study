@@ -1,5 +1,12 @@
 # Swift 초간단 튜토리얼
 
+## 0. 참고 자료
+
+- [The Swift Programming Language - swift.org](https://docs.swift.org/swift-book/)
+  - Swift에 대한 전반적인 내용들을 담고 있는 문서
+- [Swift Documentation - Apple Developer](https://developer.apple.com/documentation/swift)
+  - 각 자료형에 대한 레퍼런스 용도로 좋음
+
 ## 1. 표준 입출력
 
 ### 출력
