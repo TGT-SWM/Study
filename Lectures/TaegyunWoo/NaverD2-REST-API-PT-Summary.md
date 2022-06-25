@@ -146,7 +146,7 @@
 
 - 예시 1
     
-    ![Untitled](/assets/img/2022-06-26-Tech_RestAPI_PT_Summary/Untitled.png)
+    ![Untitled](/img/NaverD2-REST-API-PT-Summary/Untitled.png)
     
     **각 상태전이가 “해당 페이지에 있는 링크를 따라서 정의"되었기 때문에, 이것은 HATEOAS를 만족시킨다.**
     
