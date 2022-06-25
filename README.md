@@ -7,3 +7,4 @@ SW Maestro 13기 TGT팀의 스터디 내용을 정리하는 저장소입니다!
 - Swift UI
 - Spring-Boot
 - InfraStructure
+- Lectures
