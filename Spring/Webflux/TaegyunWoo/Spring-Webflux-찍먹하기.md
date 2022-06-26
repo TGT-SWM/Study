@@ -17,7 +17,7 @@
 
 ### 기존 Spring MVC의 쓰레드풀 방식
 
-![Untitled](/Spring/Webflux/TaegyunWoo/img/Untitled.png)
+![Untitled](/Spring/Webflux/TaegyunWoo/img/Spring-Webflux-Start/Untitled.png)
 
 아래는 기존의 Spring MVC가 갖는 멀티쓰레드 방식의 문제점이다.
 
@@ -32,7 +32,7 @@
 
 - 기존방식
     
-    ![Untitled](/Spring/Webflux/TaegyunWoo/img/Untitled%201.png)
+    ![Untitled](/Spring/Webflux/TaegyunWoo/img/Spring-Webflux-Start/Untitled%201.png)
     
     - 한 명의 유저가 접속 시, 여러 API를 호출한다.
     - **이때 네트워크 지연율이 증가한다.**
@@ -40,7 +40,7 @@
 
 - 개선된 방식
     
-    ![Untitled](/Spring/Webflux/TaegyunWoo/img/Untitled%202.png)
+    ![Untitled](/Spring/Webflux/TaegyunWoo/img/Spring-Webflux-Start/Untitled%202.png)
     
     - 해당 문제를 개선하기 위해, 하나의 API로 줄여버렸다.
     - 이때 서버는 **기존 로직 순서대로 처리**해줘야 한다.
@@ -55,7 +55,7 @@
 
 ### 기존 Spring MVC는 어떻게 동시성을 처리하는가?
 
-![Untitled](/Spring/Webflux/TaegyunWoo/img/Untitled%203.png)
+![Untitled](/Spring/Webflux/TaegyunWoo/img/Spring-Webflux-Start/Untitled%203.png)
 
 - Application에서 I/O 요청을 한 후, 완료되기 전까지는 Application이 Block되어 다른 작업을 수행할 수 없다.
 - 하지만 우리는 Blocking이 되지 않는 것처럼 느껴진다.
@@ -69,7 +69,7 @@ Spring Webflux는 이벤트루프를 활용하여, 동시성을 처리한다.
 
 이벤트루프란 아래와 같다.
 
-![Untitled](/Spring/Webflux/TaegyunWoo/img/Untitled%204.png)
+![Untitled](/Spring/Webflux/TaegyunWoo/img/Spring-Webflux-Start/Untitled%204.png)
 
 - Webflux는 이벤트루프 기반으로 동작하여, 적은 수의 쓰레드로도 동시성 작업을 수행할 수 있다.
 - 이벤트루프?
@@ -98,7 +98,7 @@ Spring Webflux는 이벤트루프를 활용하여, 동시성을 처리한다.
 
 아래는 논블로킹 방식의 한 예이다.
 
-![Untitled](/Spring/Webflux/TaegyunWoo/img/Untitled%205.png)
+![Untitled](/Spring/Webflux/TaegyunWoo/img/Spring-Webflux-Start/Untitled%205.png)
 
 - Application이 I/O 요청을 한 후, 다시 제어권이 Application으로 돌아온다.
     - 즉 Non-Blocking I/O 와 마찬가지로 즉시 리턴된다.
@@ -133,7 +133,7 @@ Spring Webflux는 이벤트루프를 활용하여, 동시성을 처리한다.
             > 모든 것이 `Stream` !
         - 예시) 엑셀로 표현한다면…
             
-            ![Untitled](/Spring/Webflux/TaegyunWoo/img/Untitled%206.png)
+            ![Untitled](/Spring/Webflux/TaegyunWoo/img/Spring-Webflux-Start/Untitled%206.png)
             
     - **Backpressure**
         - `Subscriber` 로 들어오는 `Stream` 의 양을 조절하는 것이다.
@@ -263,7 +263,7 @@ void mapFlux() {
 
 ### Spring MVC vs Spring Webflux
 
-![Untitled](/Spring/Webflux/TaegyunWoo/img/Untitled%207.png)
+![Untitled](/Spring/Webflux/TaegyunWoo/img/Spring-Webflux-Start/Untitled%207.png)
 
 - 왜 Webflux에는 `JPA` , `JDBC` 등이 없는가?
     - 왜냐하면 `JPA` , `JDBC` 등은 블로킹 방식으로 동작하기 때문에, Webflux의 의미가 없어지기 때문이다.
